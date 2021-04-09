@@ -1,5 +1,15 @@
-//theme
-var theme = 'dark'
+
+  $(window).on('load', function () {
+
+      $("#loader").fadeOut("slow")
+
+ });
+ 
+
+    // var loader = setTimeout(function () {
+    //      $("#loader").css("display", "none")
+    // }, 2000)
+    // loader()
 
 // music
 var music = [
@@ -241,3 +251,4 @@ function displayMusicInfo() {
     $(".alert").remove()
   })
 }
+
