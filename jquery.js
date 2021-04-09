@@ -1,3 +1,7 @@
+//theme
+var theme = 'dark'
+
+// music
 var music = [
   "./media/efecto_sonido_neon.mp3",
   "./media/1.mp3",
@@ -12,19 +16,23 @@ var music = [
 var numberPlay = 0;
 $("#audio source").attr("src", music[numberPlay]);
 $("audio")[0].load();
-
+ displayMusicInfo()
+//play
 $("#play").on("click", function () {
   console.log($("audio")[0]);
   $("audio")[0].play();
 });
+//stop
 $("#stop").on("click", function () {
   $("audio")[0].pause();
 });
+//next
 $("#next").on("click", function () {
   numberPlay < 8 ? numberPlay++ : numberPlay;
   $("#audio source").attr("src", music[numberPlay]);
   $("audio")[0].load();
 });
+//previous
 $("#prev").on("click", function () {
   numberPlay > 0 ? numberPlay-- : numberPlay;
   $("#audio source").attr("src", music[numberPlay]);
@@ -36,6 +44,7 @@ var wins;
 var losts;
 var t = 30;
 var myInterval;
+//charge wins and losts
 sessionStorage.wins
   ? (wins = JSON.parse(sessionStorage.getItem("wins", wins)))
   : (wins = 0);
@@ -43,6 +52,7 @@ sessionStorage.losts
   ? (losts = JSON.parse(sessionStorage.getItem("losts", losts)))
   : (losts = 0);
 
+//first step, click 'yes!' to continue
 $("#yes").one("click", function () {
   $(".course").css("display", "none");
   $("#wins").text("Wins: " + wins);
@@ -50,6 +60,7 @@ $("#yes").one("click", function () {
   play();
 });
 
+//second step, make de API request, start playing
 function play() {
   $("#loading").css("display", "flex");
   $.ajax({
@@ -71,6 +82,7 @@ function play() {
   interval();
 }
 
+//interval set, always start with the data of the API request
 function interval() {
   myInterval = setInterval(function () {
     t--;
@@ -100,6 +112,7 @@ function interval() {
   }, 1000);
 }
 
+//decode the data of the API
 function htmlDecode(frase) {
   return frase
     .replace(/&amp;/g, "&")
@@ -123,6 +136,7 @@ function htmlDecode(frase) {
     .replace(/&Uacute;/g, "Ú");
 }
 
+//work with the data of the API. We need the questions and all the answers
 function presentQuestion(data) {
   if (data) {
     $("#loading").css("display", "none");
@@ -145,12 +159,16 @@ function presentQuestion(data) {
   }
 }
 
+//correct answer to the question ---->data form API.
 function correctAnswer(data) {
   let correct = data.results[0].correct_answer;
   console.log(correct);
   return correct;
 }
 
+// if you select one answer, the visibility of the answer button change from 'hidden' to visible'
+// you can click the answer button or press 'Enter'. When you do that, you can see if the
+// answer was correct or not
 $("#answers").on("change", "input", function () {
   if ("input[name='answer']:checked") {
     $("#check").css("visibility", "visible");
@@ -183,6 +201,8 @@ $("#check").on("click", function () {
   }
 });
 
+//then you click the button 'continue'
+//you start playing again, and you can see how many wins and losts you have
 $("#continue").on("click", function () {
   play();
   $("#result").hide();
@@ -206,4 +226,18 @@ function win() {
   $("#questions").hide();
   $("#result").show();
   $("#answerResult").text("Win!");
+}
+
+
+
+
+
+
+function displayMusicInfo() {
+  let html = $('.page-container');
+  html = html.append("<div class=\"alert\"><p>This is a quizz game, you have 30'' for each question. At the top, in the left side you have a little music reproductor, there are 10 diferents songs. Enjoy it!</p><button>Ok!</button></div>")
+  $(".alert button").on("click", function(){
+    console.log($("alert"))
+    $(".alert").remove()
+  })
 }
