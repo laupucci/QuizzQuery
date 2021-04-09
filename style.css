@@ -1,0 +1,174 @@
+body {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./media/emily-morter-8xAA0f9yQnE-unsplash.jpg");
+  background-size: cover;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: rgb(202, 170, 211);
+  font-family: "Bungee Inline", "Open Sans";
+  text-shadow: 2px 2px 3px black;
+}
+.page-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+header {
+  width: 100%;
+}
+
+#audio {
+  display: flex;
+  margin: 2%;
+  height: 3.2vw;
+  width: 100%;
+}
+source {
+  background-color: rosybrown;
+}
+#questions {
+  height: 65%;
+  border-radius: 5px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(70, 70, 70, 0.85);
+  padding: 4vw;
+  width: 60vw;
+  font-size: 2vw;
+  font-family: "Patua One", "Open Sans";
+}
+#questions {
+  margin-bottom: 0;
+  text-shadow: 4px 4px 4px black;
+}
+#answers span {
+  margin: 1vw;
+}
+#timer {
+  background-color: rgba(185, 167, 167, 0.8);
+  color: rgba(15, 4, 4, 0.95);
+  text-shadow: 1px 1px 1px rgba(247, 233, 233);
+  padding: 1vw;
+  border-radius: 5%;
+  margin-bottom: 0;
+}
+#winLost {
+  display: flex;
+  justify-content: space-between;
+  min-width: 50%;
+}
+
+#check {
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid rgba(0, 0, 0, 0.65); */
+  border-radius: 10%;
+  background-color: rgb(27, 27, 114, 0.65);
+  width: 10vw;
+  height: 10vh;
+  font-family: "Potta One";
+  font-size: 1.5vw;
+  color: rgba(230, 230, 230, 0.85);
+  text-shadow: 1px 1px 1px rgb(0, 13, 49);
+}
+#check:hover {
+  color: rgba(255, 209, 209, 0.65);
+  background-color: rgba(255, 44, 44, 0.75);
+}
+#result {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  place-content: center center;
+  min-width: 20vw;
+  background-color: rgba(70, 70, 70, 0.85);
+  padding: 4vw;
+}
+#resultCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#play,
+#stop,
+#next,
+#prev {
+  width: 3vw;
+  height: 3vw;
+  background-color: rgb(219, 218, 218);
+  border-radius: 50%;
+  margin: 0 0.5%;
+}
+img:hover {
+  transform: scale(1.5);
+}
+.course {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.course-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(83, 82, 82, 0.75);
+  border-radius: 5vw;
+  padding: 4vw;
+  width: 30vw;
+}
+
+#yes {
+  /* border: 2px solid rgba(0, 0, 0, 0.65); */
+  border-radius: 5vw;
+  background-color: rgb(202, 170, 211);
+  width: 10vw;
+  height: 7vh;
+  font-family: "Potta One";
+  font-size: 1.5vw;
+  color: rgba(39, 8, 8, 0.85);
+  /* text-shadow: 1px 1px 1px rgba(88, 11, 11); */
+}
+#yes:hover {
+  color: rgba(255, 209, 209, 0.65);
+  background-color: rgba(255, 44, 44, 0.75);
+}
+
+#continue {
+  /* border: 2px solid rgba(0, 0, 0, 0.65); */
+  border-radius: 5vw;
+  background-color: rgb(202, 170, 211);
+  width: 10vw;
+  height: 7vh;
+  font-family: "Potta One";
+  font-size: 1.5vw;
+  color: rgba(39, 8, 8, 0.85);
+  /* text-shadow: 1px 1px 1px rgba(88, 11, 11); */
+}
+#continue:hover {
+  color: rgba(255, 209, 209, 0.65);
+  background-color: rgba(255, 44, 44, 0.75);
+}
+
+#loading {
+  display: none;
+  width: 10vw;
+  border-radius: 5px;
+  padding: 4vw;
+  background-color: rgba(70, 70, 70, 0.85);
+}

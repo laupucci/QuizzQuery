@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> QuizzQuery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Potta+One&family=Bungee+Inline&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- href="https://unsplash.com/@emilymorter?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" -->
+    <div class="page-container">        
+      <div id="audio">
+        <img src="media/play.webp" id="play"/>
+        <img src="media/pause.png" id="stop"/>
+        <img src="media/next.png" id="next"/>
+        <img src="media/prev.png" id="prev"/>
+        <audio autoplay allow="autoplay" loop >
+          <source  type="audio/mpeg">
+          Your browser doesn't sopport the audio
+        </audio>
+      </div>
+                
+      <div class="course">
+        <div class="course-title">
+          <h1>QuizzQuery</h1>
+          <h2>Are you ready to start?</h2>
+          <button id="yes">Yes!</button>
+        </div>
+      </div>
+          
+      <img src="media/loading.gif" id="loading"/>
+      <main id="questions">
+        <h3 id="question"></h3>
+        <h4 id="answers"></h4>
+        <button id="check">Answer</button>
+        <h4 id="timer" name="timer"></h4>
+        <div id="winLost">
+          <h4 id="wins"></h4>
+          <h4 id="losts"></h4>
+        </div>
+      </main>
+    </div>
+    <div id="result">
+      <div id="resultCont">
+        <h2 id="answerResult"></h2>
+        <button id="continue">Continue</button>
+      </div>
+    </div>
+
+  <script src="jquery.js"></script>
+
+  </body>
+
+</html>
+
